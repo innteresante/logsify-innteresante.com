@@ -1,4 +1,7 @@
 - [[home]](/)
-- [[page 1]]
-- [[page 2]]
-- [[page 3]]
+- [[videos]]
+- [[formación]]
+	- [[formación en innovación]]
+	- [[formación en inteligencia artificial]]
+- [[sobre_mi]]
+- [[directory]]

@@ -23,6 +23,7 @@
       max-width: 80% !important;
       margin: 0 auto;
       font-size: 1.2em;
+      /* Centra el contenido horizontalmente */
     }
 
     .sidebar>h1 {
@@ -34,7 +35,9 @@
 
     ul {
       list-style-type: none;
+      /* Esto elimina los puntos */
       padding: 0;
+      /* Esto elimina el padding izquierdo predeterminado */
     }
 
     li {
@@ -56,16 +59,16 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'Logsify',
-      repo: '',
-      logo: 'assets/logo.webp',
+      name: 'innteresante',
+      logo: 'assets/logo_40x40.png',
       coverpage: false,
-      loadSidebar: true,
+      loadSidebar: false,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
       loadNavbar: true,
       relativePath: false,
+      ga: 'UA-XXXXX-Y',
     }
   </script>
   <!-- Docsify v4 -->

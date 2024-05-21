@@ -1,0 +1,6 @@
+- ## Formación en innovación
+  - Diseñamos programas e impartimos conferencias y cursos para que tus alumnos conozcan las últimas tendencias en innovación en distintos sectores. Los estudiantes que entiendan la innovación y aprendan a aplicarla, multiplicarán sus posibilidades de desarrollar una carrera profesional exitosa.</p>
+- [[Formación en innovación]]
+- ## Formación en inteligencia artificial
+  - Estamos viviendo un momento único. Cada día se lanzan al mercado nuevas aplicaciones basadas en inteligencia artificial que van a cambiar la forma en que trabajamos en todos los ámbitos profesionales. Te ayudamos a conocerlas y a sacarles partido.
+- [[Formación en inteligencia artificial]]
