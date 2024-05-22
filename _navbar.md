@@ -1,4 +1,5 @@
 - [home](/)
-- [videos](pages/videos.md)
+- [inteligencia artificial](pages/ia.md)
+- [innovación](pages/videos.md)
 - [formación](pages/formación.md)
 - [sobre mi](pages/sobre_mi.md)
