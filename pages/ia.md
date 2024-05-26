@@ -1,16 +1,15 @@
-- <style>
-  title:: ia
-  .markdown-section {
-      max-width: 98% !important;
-  }
-  
-  @media (max-width: 768px) {
-      div.iframe-container {
-        padding-top: 120%;  /* Aumentar el porcentaje para dispositivos más pequeños */
-      }
+<style>
+.markdown-section {
+    max-width: 98% !important;
+}
+
+@media (max-width: 768px) {
+    div.iframe-container {
+      padding-top: 120%;  /* Aumentar el porcentaje para dispositivos más pequeños */
     }
-  </style>
-  
-  [Redes sociales](redes.md#socialNetworks ':include')
-  
-  [filename](https://innteresante.com/sheet2web/index.html?tags=inteligenciaartificial  ':include :type=iframe width=100% height=1200px')
+  }
+</style>
+
+[Redes sociales](redes.md#socialNetworks ':include')
+
+[filename](../sheet2web/index.html?tags=inteligenciaartificial  ':include :type=iframe width=100% height=1200px')
