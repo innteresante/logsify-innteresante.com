@@ -1,7 +1,8 @@
 - [[home]](/)
 - [[videos]]
+- [[ia]]
 - [[formación]]
-	- [[formación en innovación]]
-	- [[formación en inteligencia artificial]]
+  - [[formación en innovación]]
+  - [[formación en inteligencia artificial]]
 - [[sobre_mi]]
 - [[directory]]

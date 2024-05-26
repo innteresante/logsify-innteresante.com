@@ -1,4 +1,5 @@
 - <style>
+  title:: ia
   .markdown-section {
       max-width: 98% !important;
   }
