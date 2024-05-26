@@ -2,7 +2,7 @@
 dataSourceUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYeQU23wzvOVWrqFGqhjXqzhl3Gtdm1uLiVlv2W7eXR-zP0sLEQkm8isiX5PDnqZNYy9bx9xP14vry/pub?gid=0&single=true&output=csv"
 
 # Number of characters to show in the item description before truncating. This value can be adjusted to show more or less text.
-descriptionLength: 240
+descriptionLength: 100
 
 # List of facets that can be used to filter items. New facets can be added or existing ones removed as needed.
 activeFacets:
