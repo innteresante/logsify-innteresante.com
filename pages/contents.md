@@ -6,3 +6,4 @@
   - [[formación en inteligencia artificial]]
 - [[sobre_mi]]
 - [[directory]]
+- [[Política de privacidad]]
