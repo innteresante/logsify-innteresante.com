@@ -12,4 +12,4 @@
 
 [Redes sociales](redes.md#socialNetworks ':include')
 
-[filename](../sheet2web/index.html  ':include :type=iframe width=100% height=1200px')
+[filename](../sheet2web/index.html  ':include :type=iframe width=100% height=640px')
