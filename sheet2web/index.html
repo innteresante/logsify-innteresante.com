@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sheet2web Item Directory</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.0.2/papaparse.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml/dist/js-yaml.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importing external libraries with defer to improve page load time -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.0.2/papaparse.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml/dist/js-yaml.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <style>
+        /* CSS for maintaining 16:9 aspect ratio for images */
         .aspect-ratio-16-9 {
             position: relative;
             width: 100%;
@@ -27,6 +29,7 @@
             object-fit: cover;
         }
 
+        /* CSS for responsive iframes */
         .responsive-iframe-container {
             position: relative;
             width: 100%;
@@ -46,17 +49,21 @@
 
 <body>
     <div id="app" class="p-5">
+        <!-- Alert container, shows loading state -->
         <div role="alert" class="alert mb-2">
             <div v-if="isLoading" class="loading-container">
                 Loading...
             </div>
             <div class="flex-1">
+                <!-- Container for filter tags -->
                 <div class="scrollable-tags">
                     <div class="flex flex-wrap">
-                        <button @click="resetFilters" class="btn btn-sm mb-4 mr-2 drop-shadow"><i
-                                class="fa fa-window-close" aria-hidden="true"></i>Filters (<span
-                                v-if="activeFiltersText" class="text-gray-700">{{ activeFiltersText
-                                }}</span>)</button>
+                        <!-- Button to reset all filters -->
+                        <button @click="resetFilters" class="btn btn-sm mb-4 mr-2 drop-shadow">
+                            <i class="fa fa-window-close" aria-hidden="true"></i>Reset (<span v-if="activeFiltersText"
+                                class="text-gray-700">{{ activeFiltersText }}</span>)
+                        </button>
+                        <!-- Loop through facets to create filter buttons -->
                         <div v-for="facetInfo in facetCounts" :key="facetInfo.facet" class="mr-2">
                             <button @click="toggleVisibility(facetInfo.facet)" class="btn btn-sm drop-shadow">
                                 <i class="fas fa-filter"></i>
@@ -64,9 +71,11 @@
                             </button>
                         </div>
                     </div>
+                    <!-- Loop through facets to display filter options -->
                     <div v-for="facetInfo in facetCounts" :key="facetInfo.facet">
                         <div v-if="visibleFacets[facetInfo.facet]">
                             <h3 class="text-2xl font-bold tracking-tight text-gray-900 m-2">{{ facetInfo.facet }}</h3>
+                            <!-- Loop through values of each facet -->
                             <span v-for="valueInfo in facetInfo.values" :key="valueInfo.value"
                                 :class="{'bg-blue-500 text-white': activeFacets[facetInfo.facet] && activeFacets[facetInfo.facet][valueInfo.value], 'bg-gray-200 text-gray-700': !(activeFacets[facetInfo.facet] && activeFacets[facetInfo.facet][valueInfo.value])}"
                                 class="inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2 cursor-pointer"
@@ -79,6 +88,7 @@
             </div>
         </div>
 
+        <!-- Grid container for displaying items -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div v-for="item in filteredItems" :key="item.id" class="max-w-sm rounded overflow-hidden shadow-lg">
                 <div class="aspect-ratio-16-9">
@@ -91,6 +101,7 @@
                         </a>
                     </div>
                     <p>{{ trimDescription(item.description) }}</p>
+                    <!-- Display tags for each item -->
                     <div class="mt-2">
                         <span
                             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
@@ -99,6 +110,7 @@
                 </div>
             </div>
         </div>
+        <!-- Modal for displaying selected item details -->
         <div v-if="selectedItem" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
             @click.self="selectedItem = null">
             <div class="relative top-20 mx-auto p-5 border w-3/4 shadow-lg rounded-md bg-white">
@@ -112,165 +124,179 @@
         </div>
     </div>
     <script>
-        new Vue({
-            el: '#app',
-            data: {
-                items: [],
-                allItems: [], // Store all items to reset filters
-                selectedItem: null,
-                visibleFacets: {}, // Object to control the visibility of each facet
-                activeFacets: {},
-                isLoading: true,
-                config: {}
-            },
-            methods: {
-                showModal(item) {
-                    this.selectedItem = item;
+        // Ensure the DOM is fully loaded before initializing Vue
+        document.addEventListener('DOMContentLoaded', function () {
+            new Vue({
+                el: '#app',
+                data: {
+                    items: [], // Array to hold filtered items
+                    allItems: [], // Array to hold all items (used for resetting filters)
+                    selectedItem: null, // Object to hold the currently selected item
+                    visibleFacets: {}, // Object to control the visibility of each facet
+                    activeFacets: {}, // Object to store the active filters
+                    isLoading: true, // Boolean to control the loading state
+                    config: {} // Object to store configuration settings
                 },
-                trimDescription(description) {
-                    return description.length > this.config.descriptionLength ? description.substr(0, this.config.descriptionLength) + '...' : description;
-                },
-                toggleVisibility(facetName) {
-                    if (!this.visibleFacets[facetName]) {
-                        this.$set(this.visibleFacets, facetName, true);
-                    } else {
-                        this.visibleFacets[facetName] = !this.visibleFacets[facetName];
-                    }
-                },
-                toggleFacet(facetName, value) {
-                    facetName = facetName.toLowerCase();
-                    value = value.toLowerCase();
-                    if (!this.activeFacets[facetName]) {
-                        this.$set(this.activeFacets, facetName, {});
-                    }
-                    if (this.activeFacets[facetName][value]) {
-                        this.$delete(this.activeFacets[facetName], value);
-                    } else {
-                        this.$set(this.activeFacets[facetName], value, true);
-                    }
-                    this.applyFilters();
-                },
-                parseFacets(facetsString, tagsString) {
-                    let facets = facetsString;
-                    if (!facets || facets.trim() === '') {
-                        facets = tagsString;
-                    }
-                    return facets ? facets.split(',').map(facet => facet.trim().toLowerCase()).filter(facet => facet !== "") : [];
-                },
-                getUrlParams() {
-                    const params = new URLSearchParams(window.location.search);
-                    params.forEach((value, key) => {
-                        this.setActiveFacetsFromUrl(key.toLowerCase(), value.toLowerCase());
-                    });
-                    this.applyFilters();
-                },
-                setActiveFacetsFromUrl(facetName, values) {
-                    facetName = facetName.toLowerCase();
-                    if (!this.activeFacets[facetName]) {
-                        this.$set(this.activeFacets, facetName, {});
-                    }
-                    values.split(',').forEach(value => {
-                        this.$set(this.activeFacets[facetName], value.trim().toLowerCase(), true);
-                    });
-                    console.log("Active Facets after URL params: ", this.activeFacets); // Debugging log
-                },
-                applyFilters() {
-                    if (Object.keys(this.activeFacets).length === 0) {
-                        this.items = this.allItems;
-                        return;
-                    }
-                    this.items = this.allItems.filter(item => {
-                        return Object.keys(this.activeFacets).some(facetName => {
-                            if (!item[facetName]) return false;
-                            const itemFacetValues = item[facetName] ? item[facetName].split(',').map(value => value.trim().toLowerCase()) : [];
-                            const activeFacetValues = this.activeFacets[facetName];
-                            return itemFacetValues.some(value => activeFacetValues && activeFacetValues[value]);
+                methods: {
+                    // Method to show the modal with item details
+                    showModal(item) {
+                        this.selectedItem = item;
+                    },
+                    // Method to trim item descriptions based on configuration
+                    trimDescription(description) {
+                        return description.length > this.config.descriptionLength ? description.substr(0, this.config.descriptionLength) + '...' : description;
+                    },
+                    // Method to toggle the visibility of a facet
+                    toggleVisibility(facetName) {
+                        if (!this.visibleFacets[facetName]) {
+                            this.$set(this.visibleFacets, facetName, true);
+                        } else {
+                            this.visibleFacets[facetName] = !this.visibleFacets[facetName];
+                        }
+                    },
+                    // Method to toggle a facet value in active filters
+                    toggleFacet(facetName, value) {
+                        facetName = facetName.toLowerCase();
+                        value = value.toLowerCase();
+                        if (!this.activeFacets[facetName]) {
+                            this.$set(this.activeFacets, facetName, {});
+                        }
+                        if (this.activeFacets[facetName][value]) {
+                            this.$delete(this.activeFacets[facetName], value);
+                        } else {
+                            this.$set(this.activeFacets[facetName], value, true);
+                        }
+                        this.applyFilters();
+                    },
+                    // Method to parse facet strings
+                    parseFacets(facetsString, tagsString) {
+                        let facets = facetsString;
+                        if (!facets || facets.trim() === '') {
+                            facets = tagsString;
+                        }
+                        return facets ? facets.split(',').map(facet => facet.trim().toLowerCase()).filter(facet => facet !== "") : [];
+                    },
+                    // Method to get URL parameters and set active filters
+                    getUrlParams() {
+                        const params = new URLSearchParams(window.location.search);
+                        params.forEach((value, key) => {
+                            this.setActiveFacetsFromUrl(key.toLowerCase(), value.toLowerCase());
                         });
-                    });
+                        this.applyFilters();
+                    },
+                    // Method to set active filters from URL parameters
+                    setActiveFacetsFromUrl(facetName, values) {
+                        facetName = facetName.toLowerCase();
+                        if (!this.activeFacets[facetName]) {
+                            this.$set(this.activeFacets, facetName, {});
+                        }
+                        values.split(',').forEach(value => {
+                            this.$set(this.activeFacets[facetName], value.trim().toLowerCase(), true);
+                        });
+                    },
+                    // Method to apply filters to items
+                    applyFilters() {
+                        if (Object.keys(this.activeFacets).length === 0) {
+                            this.items = this.allItems;
+                            return;
+                        }
+                        this.items = this.allItems.filter(item => {
+                            return Object.keys(this.activeFacets).some(facetName => {
+                                if (!item[facetName]) return false;
+                                const itemFacetValues = item[facetName] ? item[facetName].split(',').map(value => value.trim().toLowerCase()) : [];
+                                const activeFacetValues = this.activeFacets[facetName];
+                                return itemFacetValues.some(value => activeFacetValues && activeFacetValues[value]);
+                            });
+                        });
+                    },
+                    // Method to reset all filters
+                    resetFilters() {
+                        this.activeFacets = {};
+                        this.items = this.allItems;
+                    }
                 },
-                resetFilters() {
-                    this.activeFacets = {};
-                    this.items = this.allItems;
-                }
-            },
-            computed: {
-                facetCounts() {
-                    const facetValues = {};
-                    this.allItems.forEach(item => {
-                        this.config.activeFacets.forEach(facetName => {
-                            const lowerCaseFacetName = facetName.toLowerCase();
-                            if (item[lowerCaseFacetName]) {
-                                const values = item[lowerCaseFacetName].split(',').map(value => value.trim().toLowerCase()).filter(value => value !== "");
-                                values.forEach(value => {
-                                    if (!facetValues[lowerCaseFacetName]) {
-                                        facetValues[lowerCaseFacetName] = {};
-                                    }
-                                    if (!facetValues[lowerCaseFacetName][value]) {
-                                        facetValues[lowerCaseFacetName][value] = 0;
-                                    }
-                                    facetValues[lowerCaseFacetName][value]++;
-                                });
+                computed: {
+                    // Computed property to count facets and their values
+                    facetCounts() {
+                        const facetValues = {};
+                        this.allItems.forEach(item => {
+                            this.config.activeFacets.forEach(facetName => {
+                                const lowerCaseFacetName = facetName.toLowerCase();
+                                if (item[lowerCaseFacetName]) {
+                                    const values = item[lowerCaseFacetName].split(',').map(value => value.trim().toLowerCase()).filter(value => value !== "");
+                                    values.forEach(value => {
+                                        if (!facetValues[lowerCaseFacetName]) {
+                                            facetValues[lowerCaseFacetName] = {};
+                                        }
+                                        if (!facetValues[lowerCaseFacetName][value]) {
+                                            facetValues[lowerCaseFacetName][value] = 0;
+                                        }
+                                        facetValues[lowerCaseFacetName][value]++;
+                                    });
+                                }
+                            });
+                        });
+
+                        const result = [];
+                        Object.keys(facetValues).forEach(facetName => {
+                            const facets = Object.keys(facetValues[facetName]).map(value => ({
+                                value: value,
+                                count: facetValues[facetName][value]
+                            }));
+                            facets.sort((a, b) => b.count - a.count);
+                            result.push({
+                                facet: facetName,
+                                values: facets
+                            });
+                        });
+                        return result;
+                    },
+                    // Computed property to return filtered items
+                    filteredItems() {
+                        return this.items;
+                    },
+                    // Computed property to display active filters text
+                    activeFiltersText() {
+                        const filters = [];
+                        Object.keys(this.activeFacets).forEach(facetName => {
+                            const activeValues = Object.keys(this.activeFacets[facetName]).filter(value => this.activeFacets[facetName][value]);
+                            if (activeValues.length > 0) {
+                                filters.push(`${facetName}: ${activeValues.join(', ')}`);
                             }
                         });
-                    });
-
-                    const result = [];
-                    Object.keys(facetValues).forEach(facetName => {
-                        const facets = Object.keys(facetValues[facetName]).map(value => ({
-                            value: value,
-                            count: facetValues[facetName][value]
-                        }));
-                        facets.sort((a, b) => b.count - a.count);
-                        result.push({
-                            facet: facetName,
-                            values: facets
-                        });
-                    });
-                    return result;
+                        return filters.length > 0 ? `Filters: ${filters.join(' | ')}` : 'No active filters';
+                    }
                 },
-                filteredItems() {
-                    return this.items;
-                },
-                activeFiltersText() {
-                    const filters = [];
-                    Object.keys(this.activeFacets).forEach(facetName => {
-                        const activeValues = Object.keys(this.activeFacets[facetName]).filter(value => this.activeFacets[facetName][value]);
-                        if (activeValues.length > 0) {
-                            filters.push(`${facetName}: ${activeValues.join(', ')}`);
-                        }
-                    });
-                    return filters.length > 0 ? `Filters: ${filters.join(' | ')}` : 'No active filters';
-                }
-            },
-            mounted() {
-                this.isLoading = true;
-                fetch('config.yaml')
-                    .then(response => response.text())
-                    .then(yaml => {
-                        this.config = jsyaml.load(yaml);
-                        fetch(this.config.dataSourceUrl.trim())
-                            .then(response => response.text())
-                            .then(csvData => {
-                                Papa.parse(csvData, {
-                                    header: true,
-                                    skipEmptyLines: true,
-                                    complete: (results) => {
-                                        this.allItems = results.data.map(item => {
-                                            const newItem = {};
-                                            Object.keys(item).forEach(key => {
-                                                newItem[key.toLowerCase()] = item[key];
+                // Lifecycle hook to load initial data
+                mounted() {
+                    this.isLoading = true;
+                    fetch('config.yaml')
+                        .then(response => response.text())
+                        .then(yaml => {
+                            this.config = jsyaml.load(yaml);
+                            fetch(this.config.dataSourceUrl.trim())
+                                .then(response => response.text())
+                                .then(csvData => {
+                                    Papa.parse(csvData, {
+                                        header: true,
+                                        skipEmptyLines: true,
+                                        complete: (results) => {
+                                            this.allItems = results.data.map(item => {
+                                                const newItem = {};
+                                                Object.keys(item).forEach(key => {
+                                                    newItem[key.toLowerCase()] = item[key];
+                                                });
+                                                return newItem;
                                             });
-                                            return newItem;
-                                        });
-                                        this.items = this.allItems;
-                                        console.log("Items loaded: ", this.items); // Debugging log
-                                        this.getUrlParams(); // Apply filters from URL after loading data
-                                        this.isLoading = false;
-                                    }
+                                            this.items = this.allItems;
+                                            this.getUrlParams();
+                                            this.isLoading = false;
+                                        }
+                                    });
                                 });
-                            });
-                    });
-            }
+                        });
+                }
+            });
         });
     </script>
 </body>
