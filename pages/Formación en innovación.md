@@ -23,5 +23,5 @@
 - ### **Algunos vídeos…**
   - Vídeos en formato píldora publicados en [Youtube](https://www.youtube.com/playlist?list=PLhKbjbKTIRcwF2FKe3MBcqj2K_mZYj88x) (+1M de visualizaciones), tiktok (150.000 seguidores) o [linkedin](https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=lucascervera), en el que se dan a conocer proyectos innovadores.
 - ## Lucas Cervera
-  
-  [Lucas Cervera](sobre_mi.md#lucas ':include')
+
+[Lucas Cervera](sobre_mi.md#lucas ':include')
