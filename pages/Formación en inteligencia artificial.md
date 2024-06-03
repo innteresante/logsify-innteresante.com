@@ -18,8 +18,8 @@
   - #### **Cómo funciona la inteligencia artificial**
     - Conoce conceptos como el prompt engineering, modelos grandes de lenguaje (LLMs), redes neuronales, embeddings, agentes de inteligencia artificial, etc…
 - ## **Algunos vídeos sobre inteligencia artificial**
-  - [Vídeos en formato píldora](https://innteresante.com/#/pages/ia) publicados en [Youtube](https://www.youtube.com/playlist?list=PLhKbjbKTIRcwF2FKe3MBcqj2K_mZYj88x) (+6M de visualizaciones), tiktok (150.000 seguidores) o [linkedin](https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=lucascervera), en el que se dan a conocer proyectos relacionados con inteligencia artificial.
+  - [Vídeos en formato píldora](https://innteresante.com/#/pages/ia) en los que se dan a conocer proyectos relacionados con inteligencia artificial.
   - [Entrevistas con especialistas en inteligencia artificial](https://impulsar.ai/#/pages/videos).
 - ## Lucas Cervera
-
-[Lucas Cervera](sobre_mi.md#lucas ':include')
+  
+  [Lucas Cervera](sobre_mi.md#lucas ':include')
