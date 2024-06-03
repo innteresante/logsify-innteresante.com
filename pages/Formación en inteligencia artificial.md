@@ -20,6 +20,7 @@
 - ## **Algunos vídeos sobre inteligencia artificial**
   - [Vídeos en formato píldora](https://innteresante.com/#/pages/ia) en los que se dan a conocer proyectos relacionados con inteligencia artificial.
   - [Entrevistas con especialistas en inteligencia artificial](https://impulsar.ai/#/pages/videos).
-- ## Lucas Cervera
-  
-  [Lucas Cervera](sobre_mi.md#lucas ':include')
+
+## Lucas Cervera
+ 
+[Lucas Cervera](sobre_mi.md#lucas ':include')
