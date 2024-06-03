@@ -4,7 +4,7 @@
 <!-- embed:start:lucas -->
 
 
-<p>Profesor especializado en innovación e inteligencia artificial con más de 800 horas de de clase con más de 1800 alumnos. Ha impartido más de 120 conferencias con más de 5000 asistentes. [Más información en lucascervera.com](https://lucascervera.com/).</p>
+Profesor especializado en innovación e inteligencia artificial con más de 800 horas de de clase con más de 1800 alumnos. Ha impartido más de 120 conferencias con más de 5000 asistentes. [Más información en lucascervera.com](https://lucascervera.com/).
 
 <p>Contáctame por correo electrónico en lucas<span>@</span>lucascervera.com</p>
 

@@ -1,16 +1,16 @@
 <style>
-.markdown-section {
-    max-width: 98% !important;
-}
-
-@media (max-width: 768px) {
-    div.iframe-container {
-      padding-top: 120%;  /* Aumentar el porcentaje para dispositivos más pequeños */
-    }
+  .markdown-section {
+      max-width: 98% !important;
   }
+  
+  @media (max-width: 768px) {
+      div.iframe-container {
+        padding-top: 120%;  /* Aumentar el porcentaje para dispositivos más pequeños */
+      }
+    }
 </style>
 
-Lucas Cervera es creador de contenidos sobre inteligencia artificial en innteresante y promotor del proyecto [impulsar.ai](https://impulsar.ai)
+Lucas Cervera es creador de contenidos sobre inteligencia artificial en innteresante y promotor del proyecto [impulsar.ai](https://impulsar.ai). Imparto [[Formación en inteligencia artificial]].
 
 [Redes sociales](redes.md#socialNetworks ':include')
 

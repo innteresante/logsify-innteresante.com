@@ -7,7 +7,7 @@
             La innovación, como siempre,<br class="hidden lg:block">
             avanza como nunca
           </h1>
-          <p class="text-gray-500">Seleccionamos las innovaciones más interesantes y te las contamos de forma entretenida y fácil de entender mediante vídeos cortos, sorprendentes y formativos sobre 🧠 inteligencia artificial,🔬ciencia 💻tecnología 🔔creatividad ⚒️emprendimiento y 🚀startups. Ofrecemos formación en innovación e inteligencia artificial.</p>
+          <p class="text-gray-500">Selecciono las innovaciones más interesantes y te las cuento de forma entretenida y fácil de entender mediante vídeos cortos, sorprendentes y formativos sobre 🧠 inteligencia artificial,🔬ciencia 💻tecnología 🔔creatividad ⚒️emprendimiento y 🚀startups. Imparto <a href="#/pages/formación">formación en innovación e inteligencia artificial</a>.</p>
           <div class="iframe-container">
             <div class="iframe-wrapper">
               <iframe src="https://www.youtube.com/embed/a7R5djYz4Sw" title="¿Qué es interesante?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -18,9 +18,3 @@
     </div>
   </div>
 </section>
-
-[Redes sociales](pages/redes.md#socialNetworks ':include')
-
-<!-- background image -->
-
-![](assets/background.png)
