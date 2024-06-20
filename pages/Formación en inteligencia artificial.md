@@ -1,6 +1,7 @@
 # Formación en Inteligencia Artificial
 
 ![DALL·E 2024-05-30 12.55.28 - An isometric landscape of an artificial intelligence laboratory, predominately in shades of purple banner.png](../assets/ia_banner.png)
+
 - Desde 2020 Lucas Cervera selecciona las innovaciones más interesantes en el campo de la inteligencia artificial y te las cuenta de forma entretenida y fácil de entender ( [vídeos](https://innteresante.com/#/pages/ia) ).
 - Lucas es el promotor del proyecto [impulsar.ai](http://impulsar.ai), una plataforma que ayuda a innovadores en el campo de la inteligencia artificial a poner sus proyectos en marcha, y a entender cómo la IA va a cambiar los distintos sectores de la actividad ([vídeos](https://www.youtube.com/@impulsarai/videos)).
 - También es miembro del [Grupo de Investigación en Inteligencia Artificial de ESIC](https://www.esic.edu/institucion/grupos-de-investigacion/iagas).
@@ -28,5 +29,5 @@
   - [Vídeos en formato píldora](https://innteresante.com/#/pages/ia) en los que se dan a conocer proyectos relacionados con inteligencia artificial.
   - [Entrevistas con especialistas en inteligencia artificial](https://impulsar.ai/#/pages/videos).
 - ## Lucas Cervera
-  
-  [Lucas Cervera](sobre_mi.md#lucas ":include")
+
+[Lucas Cervera](sobre_mi.md#lucas ":include")

@@ -1,6 +1,7 @@
 # Formación en innovación
 
 ![DALL·E 2024-05-30 12.52.52 - An isometric landscape divided into various sections, each representing different themes connected in a harmonious layout banner.png](../assets/innovacion_banner.png)
+
 - ## La innovación, como siempre, avanza como nunca
   - Seleccionamos las innovaciones más interesantes y te las contamos de forma entretenida y fácil de entender en clases o conferencias sobre🔬ciencia 💻tecnología 🔔creatividad ⚒️emprendimiento y 🚀startups
 - ## ¿A quién va dirigido?
@@ -25,6 +26,7 @@
 - ## ¿Qué es innteresante?
 - ### Algunos vídeos…
   - Vídeos en formato píldora publicados en [Youtube](https://www.youtube.com/playlist?list=PLhKbjbKTIRcwF2FKe3MBcqj2K_mZYj88x) (+6M de visualizaciones), tiktok (65M de visualizaciones) o [linkedin](https://www.linkedin.com/mynetwork/discovery-see-all/?usecase=PEOPLE_FOLLOWS&followMember=lucascervera), en el que se dan a conocer proyectos innovadores.
-- ## Lucas Cervera
-  
-  [Lucas Cervera](sobre_mi.md#lucas ':include')
+
+## Lucas Cervera
+
+[Lucas Cervera](sobre_mi.md#lucas ":include")
