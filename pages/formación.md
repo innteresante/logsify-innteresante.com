@@ -1,6 +1,6 @@
 ## Formación en innovación
   - ![DALL·E 2024-05-30 12.52.52 - An isometric landscape divided into various sections, each representing different themes connected in a harmonious layout banner.png](../assets/innovacion_banner.png)
-  - Diseño de programas e impartición de conferencias y cursos para que tus alumnos conozcan las últimas tendencias en innovación en distintos sectores. Los estudiantes que entiendan la innovación y aprendan a aplicarla, multiplicarán sus posibilidades de desarrollar una carrera profesional exitosa.
+  - Diseño de programas e impartición de conferencias y cursos para que los participantes conozcan las últimas tendencias en innovación en distintos sectores. Los profesionales que entiendan la innovación y aprendan a aplicarla, multiplicarán sus posibilidades de desarrollar una carrera profesional exitosa.
   - [[Formación en innovación]]
 -
 - ## Formación en inteligencia artificial

@@ -6,4 +6,5 @@
   - [[formación en inteligencia artificial]]
 - [[sobre_mi]]
 - [[directory]]
+- [[nOSOco]]
 - [[Política de privacidad]]
