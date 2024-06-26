@@ -11,7 +11,7 @@
   - Ayudamos a los miembros de tu organización a entender las ventajas que les puede aportar la utilización de herramientas innovadoras, y a desarrollar una actitud y mentalidad proactiva e innovadora en su actividad profesional.
 - ### Formatos
   - #### Conferencias
-    - Charlas divulgativas para que los asistentes conozcan las [innovaciones más interesantes y sorprendentes en múltiples disciplinas](https://innteresante.com/#/pages/videos).<a href="https://innteresante.com/#/pages/videos" target="_blank">innovaciones más interesantes y sorprendentes en múltiples disciplinas</a>
+    - Charlas divulgativas para que los asistentes conozcan las <a href="https://innteresante.com/#/pages/videos" target="_blank">innovaciones más interesantes y sorprendentes en múltiples disciplinas</a>.
   - #### Cursos y clases
     - Cursos presenciales u online en los que se exponen tendencias, se explican tecnologías y herramientas, y se plantean ejercicios prácticos. Un ejemplo es [la conferencia](https://www.youtube.com/watch?v=j4lu36Lxvk4) que impartí para la Universidad de Tamaulipas en México, o este [resumen de varias charlas sobre startups y emprendimiento](https://www.youtube.com/watch?v=n8vGEpSRguQ&t=4s).
   - #### Diseño de programas a medida
