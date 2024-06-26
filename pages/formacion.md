@@ -4,6 +4,7 @@
 - Diseño de programas e impartición de conferencias y cursos para que los participantes conozcan las últimas tendencias en innovación en distintos sectores. Los profesionales que entiendan la innovación y aprendan a aplicarla, multiplicarán sus posibilidades de desarrollar una carrera profesional exitosa.
 - 
 - [Formación en innovación - Folleto](pages/formacion_innovacion.md)
+- [Formación en innovación - Folleto](pages/formacion_innovacion2.md)
 
 ## Formación en inteligencia artificial
 
