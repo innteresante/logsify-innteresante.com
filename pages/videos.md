@@ -10,7 +10,7 @@
   }
 </style>
 
-Divulgación de la innovación a través de vídeos (6 millones de visualizaciones en Youtube / 65 millones de visualizaciones en TikTok). Imparto [[Formación en innovación]]
+Divulgación de la innovación a través de vídeos (6 millones de visualizaciones en Youtube / 65 millones de visualizaciones en TikTok). Imparto [Formación en innovación](pages/formacion_innovacion.md)
 
 [Redes sociales](redes.md#socialNetworks ':include')
 
